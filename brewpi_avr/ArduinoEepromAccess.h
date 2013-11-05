@@ -1,5 +1,6 @@
 /*
- * Copyright 2012 BrewPi/Elco Jacobs.
+ * Copyright 2013 BrewPi/Elco Jacobs.
+ * Copyright 2013 Matthew McGowan.
  *
  * This file is part of BrewPi.
  * 
@@ -17,10 +18,22 @@
  * along with BrewPi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#include <avr/eeprom.h>
 
-#define VERSION_STRING "0.2.3"
-
-
-#endif /* VERSION_H_ */	
+class ArduinoEepromAccess
+{
+public:
+	static uint8_t readByte(eptr_t offset) {
+		return eeprom_read_byte((uint8_t*)offset);
+	}
+	static void writeByte(eptr_t offset, uint8_t value) {
+		eeprom_update_byte((uint8_t*)offset, value);
+	}
+	
+	static void readBlock(void* target, eptr_t offset, uint16_t size) {
+		eeprom_read_block(target, (uint8_t*)offset, size);
+	}
+	static void writeBlock(eptr_t target, const void* source, uint16_t size) {
+		eeprom_update_block(source, (void*)target, size);
+	}	
+};

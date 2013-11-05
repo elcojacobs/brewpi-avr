@@ -1,5 +1,6 @@
 /*
- * Copyright 2012 BrewPi/Elco Jacobs.
+ * Copyright 2013 BrewPi/Elco Jacobs.
+ * Copyright 2013 Matthew McGowan.
  *
  * This file is part of BrewPi.
  * 
@@ -17,10 +18,21 @@
  * along with BrewPi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
+#pragma once
 
-#define VERSION_STRING "0.2.3"
+#include "EepromTypes.h"
 
+#ifdef ARDUINO
 
-#endif /* VERSION_H_ */	
+#include "ArduinoEepromAccess.h"
+typedef ArduinoEepromAccess EepromAccess;
+
+#else
+
+#include "ArrayEepromAccess.h"
+
+typedef ArrayEepromAccess EepromAccess;
+
+#endif
+
+extern EepromAccess eepromAccess;

@@ -1,5 +1,6 @@
 /*
- * Copyright 2012 BrewPi/Elco Jacobs.
+ * Copyright 2013 BrewPi/Elco Jacobs.
+ * Copyright 2013 Matthew McGowan.
  *
  * This file is part of BrewPi.
  * 
@@ -17,10 +18,8 @@
  * along with BrewPi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VERSION_H_
-#define VERSION_H_
 
-#define VERSION_STRING "0.2.3"
+#pragma once
 
-
-#endif /* VERSION_H_ */	
+typedef uint16_t eptr_t;
+#define INVALID_EPTR (0)

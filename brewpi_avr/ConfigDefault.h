@@ -23,7 +23,7 @@
 #include <Arduino.h> // include Arduino.h or USBCON will always be undefined
 
 /**
- * Do not change this file directly - rather edit ConfigLocal.h
+ * Do not change this file directly - rather edit Config.h
  */
 
 #ifndef BREWPI_STATIC_CONFIG
@@ -69,10 +69,6 @@
 
 #ifndef BREWPI_LOG_DEBUG
 #define BREWPI_LOG_DEBUG 0
-#endif
-
-#ifndef BREWPI_STATIC_CONFIG
-#define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_C
 #endif
 
 /**
@@ -157,9 +153,11 @@
 #ifndef BREWPI_BOARD
 
 #if defined(USBCON)
-	#define BREWPI_BOARD 'l'		// standard
+	#define BREWPI_BOARD 'l'		// leonardo
 #else
-	#define BREWPI_BOARD 's'		// leonardo
+	#define BREWPI_BOARD 's'		// standard
+#endif
+
 #endif
 
 #ifndef OPTIMIZE_GLOBAL
@@ -177,6 +175,9 @@
 #define BUILD_NUMBER 0
 #endif
 
+#ifndef DISPLAY_TIME_HMS
+#define DISPLAY_TIME_HMS 1
 #endif
+
 
 
