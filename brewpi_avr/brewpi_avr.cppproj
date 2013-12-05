@@ -413,11 +413,16 @@
     <Compile Include="TicksArduino.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="sensorHistory.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Version.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="arduino\" />
+    <Folder Include="arduino\cores\" />
     <Folder Include="arduino\cores\arduino\" />
     <Folder Include="arduino\variants\" />
     <Folder Include="fallback" />
