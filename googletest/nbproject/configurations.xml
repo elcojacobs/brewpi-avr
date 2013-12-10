@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <logicalFolder name="gtest" displayName="gtest" projectFiles="true">
+          <logicalFolder name="internal" displayName="internal" projectFiles="true">
+            <itemPath>include/gtest/internal/gtest-death-test-internal.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-filepath.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-internal.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-linked_ptr.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-param-util-generated.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-param-util-generated.h.pump</itemPath>
+            <itemPath>include/gtest/internal/gtest-param-util.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-port.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-string.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-tuple.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-tuple.h.pump</itemPath>
+            <itemPath>include/gtest/internal/gtest-type-util.h</itemPath>
+            <itemPath>include/gtest/internal/gtest-type-util.h.pump</itemPath>
+          </logicalFolder>
+          <itemPath>include/gtest/gtest-death-test.h</itemPath>
+          <itemPath>include/gtest/gtest-message.h</itemPath>
+          <itemPath>include/gtest/gtest-param-test.h</itemPath>
+          <itemPath>include/gtest/gtest-param-test.h.pump</itemPath>
+          <itemPath>include/gtest/gtest-printers.h</itemPath>
+          <itemPath>include/gtest/gtest-spi.h</itemPath>
+          <itemPath>include/gtest/gtest-test-part.h</itemPath>
+          <itemPath>include/gtest/gtest-typed-test.h</itemPath>
+          <itemPath>include/gtest/gtest.h</itemPath>
+          <itemPath>include/gtest/gtest_pred_impl.h</itemPath>
+          <itemPath>include/gtest/gtest_prod.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>R:/dev/brewpi/brewpi-avr/googletest/src/gtest-all.cc</itemPath>
+      <itemPath>R:/dev/brewpi/brewpi-avr/googletest/src/gtest_main.cc</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+    <Elem>include</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="R:/dev/brewpi/brewpi-avr/googletest/src/gtest-all.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/googletest/src/gtest_main.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-death-test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-param-test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-param-test.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-printers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-spi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-test-part.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-typed-test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest_pred_impl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest_prod.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-death-test-internal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-filepath.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-internal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-linked_ptr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-param-util-generated.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-param-util-generated.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-param-util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-port.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-string.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-tuple.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-tuple.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-type-util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-type-util.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="R:/dev/brewpi/brewpi-avr/googletest/src/gtest-all.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/googletest/src/gtest_main.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-death-test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-param-test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-param-test.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-printers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-spi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-test-part.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest-typed-test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest_pred_impl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/gtest_prod.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-death-test-internal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-filepath.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-internal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-linked_ptr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-param-util-generated.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-param-util-generated.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-param-util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-port.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-string.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-tuple.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-tuple.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-type-util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/gtest/internal/gtest-type-util.h.pump"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

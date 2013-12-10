@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="brewpi_avr" displayName="brewpi_avr" projectFiles="true">
+      <logicalFolder name="Build" displayName="Build" projectFiles="true">
+        <itemPath>../brewpi_avr/Build/makedep.mk</itemPath>
+        <itemPath>../brewpi_avr/Build/makefile</itemPath>
+      </logicalFolder>
+      <logicalFolder name="fallback" displayName="fallback" projectFiles="true">
+        <itemPath>../brewpi_avr/fallback/Config.h</itemPath>
+      </logicalFolder>
+      <itemPath>../brewpi_avr/Actuator.cpp</itemPath>
+      <itemPath>../brewpi_avr/Actuator.h</itemPath>
+      <itemPath>../brewpi_avr/ActuatorArduinoPin.h</itemPath>
+      <itemPath>../brewpi_avr/ActuatorAutoOff.h</itemPath>
+      <itemPath>../brewpi_avr/ArduinoEepromAccess.h</itemPath>
+      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_avr/Brewpi.cpp</itemPath>
+      <itemPath>../brewpi_avr/Brewpi.h</itemPath>
+      <itemPath>../brewpi_avr/BrewpiStrings.cpp</itemPath>
+      <itemPath>../brewpi_avr/BrewpiStrings.h</itemPath>
+      <itemPath>../brewpi_avr/Buzzer.cpp</itemPath>
+      <itemPath>../brewpi_avr/Buzzer.h</itemPath>
+      <itemPath>../brewpi_avr/ConfigDefault.h</itemPath>
+      <itemPath>../brewpi_avr/DS2413.h</itemPath>
+      <itemPath>../brewpi_avr/DallasTemperature.h</itemPath>
+      <itemPath>../brewpi_avr/DeviceManager.cpp</itemPath>
+      <itemPath>../brewpi_avr/DeviceManager.h</itemPath>
+      <itemPath>../brewpi_avr/Display.cpp</itemPath>
+      <itemPath>../brewpi_avr/Display.h</itemPath>
+      <itemPath>../brewpi_avr/DisplayBase.h</itemPath>
+      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_avr/DisplayLcd.cpp</itemPath>
+      <itemPath>../brewpi_avr/DisplayLcd.h</itemPath>
+      <itemPath>../brewpi_avr/EepromAccess.h</itemPath>
+      <itemPath>../brewpi_avr/EepromFormat.h</itemPath>
+      <itemPath>../brewpi_avr/EepromManager.cpp</itemPath>
+      <itemPath>../brewpi_avr/EepromManager.h</itemPath>
+      <itemPath>../brewpi_avr/EepromTypes.h</itemPath>
+      <itemPath>../brewpi_avr/FastDigitalPin.h</itemPath>
+      <itemPath>../brewpi_avr/FilterCascaded.cpp</itemPath>
+      <itemPath>../brewpi_avr/FilterCascaded.h</itemPath>
+      <itemPath>../brewpi_avr/FilterFixed.cpp</itemPath>
+      <itemPath>../brewpi_avr/FilterFixed.h</itemPath>
+      <itemPath>../brewpi_avr/JsonKeys.h</itemPath>
+      <itemPath>../brewpi_avr/LogMessages.h</itemPath>
+      <itemPath>../brewpi_avr/Logger.cpp</itemPath>
+      <itemPath>../brewpi_avr/Logger.h</itemPath>
+      <itemPath>../brewpi_avr/Menu.cpp</itemPath>
+      <itemPath>../brewpi_avr/Menu.h</itemPath>
+      <itemPath>../brewpi_avr/NullLcdDriver.cpp</itemPath>
+      <itemPath>../brewpi_avr/NullLcdDriver.h</itemPath>
+      <itemPath>../brewpi_avr/OLEDFourBit.h</itemPath>
+      <itemPath>../brewpi_avr/OneWire.h</itemPath>
+      <itemPath>../brewpi_avr/OneWireActuator.h</itemPath>
+      <itemPath>../brewpi_avr/OneWireDevices.h</itemPath>
+      <itemPath>../brewpi_avr/OneWireTempSensor.h</itemPath>
+      <itemPath>../brewpi_avr/PiLink.cpp</itemPath>
+      <itemPath>../brewpi_avr/PiLink.h</itemPath>
+      <itemPath>../brewpi_avr/Pins.h</itemPath>
+      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_avr/RotaryEncoder.cpp</itemPath>
+      <itemPath>../brewpi_avr/RotaryEncoder.h</itemPath>
+      <itemPath>../brewpi_avr/Sensor.cpp</itemPath>
+      <itemPath>../brewpi_avr/Sensor.h</itemPath>
+      <itemPath>../brewpi_avr/SensorArduinoPin.h</itemPath>
+      <itemPath>../brewpi_avr/SettingsManager.cpp</itemPath>
+      <itemPath>../brewpi_avr/SettingsManager.h</itemPath>
+      <itemPath>../brewpi_avr/Simulator.cpp</itemPath>
+      <itemPath>../brewpi_avr/Simulator.h</itemPath>
+      <itemPath>../brewpi_avr/SpiLcd.h</itemPath>
+      <itemPath>../brewpi_avr/TempControl.cpp</itemPath>
+      <itemPath>../brewpi_avr/TempControl.h</itemPath>
+      <itemPath>../brewpi_avr/TempSensor.cpp</itemPath>
+      <itemPath>../brewpi_avr/TempSensor.h</itemPath>
+      <itemPath>../brewpi_avr/TempSensorBasic.h</itemPath>
+      <itemPath>../brewpi_avr/TempSensorDisconnected.h</itemPath>
+      <itemPath>../brewpi_avr/TempSensorExternal.h</itemPath>
+      <itemPath>../brewpi_avr/TempSensorMock.h</itemPath>
+      <itemPath>../brewpi_avr/TemperatureFormats.cpp</itemPath>
+      <itemPath>../brewpi_avr/TemperatureFormats.h</itemPath>
+      <itemPath>../brewpi_avr/Ticks.cpp</itemPath>
+      <itemPath>../brewpi_avr/Ticks.h</itemPath>
+      <itemPath>../brewpi_avr/TicksArduino.h</itemPath>
+      <itemPath>../brewpi_avr/Version.h</itemPath>
+      <itemPath>../brewpi_avr/brewpi_avr.cppproj</itemPath>
+    </logicalFolder>
+    <logicalFolder name="brewpi_cpp" displayName="brewpi_cpp" projectFiles="true">
+      <logicalFolder name="tmp" displayName="tmp" projectFiles="true">
+        <itemPath>../brewpi_cpp/tmp/Actuator.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Brewpi.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/BrewpiStrings.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Buzzer.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/DeviceManager.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Display.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/DisplayLcd.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/EepromManager.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/FilterCascaded.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/FilterFixed.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Logger.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Main.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Menu.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/NullLcdDriver.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/PiLink.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Print.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/RotaryEncoder.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Sensor.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/SettingsManager.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Simulator.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/TempControl.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/TempSensor.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/TemperatureFormats.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/Ticks.d</itemPath>
+        <itemPath>../brewpi_cpp/tmp/brewpi-avr.exe</itemPath>
+        <itemPath>../brewpi_cpp/tmp/timems.d</itemPath>
+      </logicalFolder>
+      <itemPath>../brewpi_cpp/Arduino.h</itemPath>
+      <itemPath>../brewpi_cpp/ArrayEepromAccess.h</itemPath>
+      <itemPath>../brewpi_cpp/Config.h</itemPath>
+      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_cpp/Main.cpp</itemPath>
+      <itemPath>../brewpi_cpp/Print.cpp</itemPath>
+      <itemPath>../brewpi_cpp/Print.h</itemPath>
+      <itemPath>../brewpi_cpp/makefile</itemPath>
+      <itemPath>../brewpi_cpp/timems.cpp</itemPath>
+      <itemPath>../brewpi_cpp/timems.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="fallback" displayName="fallback" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f2" displayName="gtest" projectFiles="true" kind="TEST">
+        <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_cpp/test/ArrayEepromAccess_Test.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1"
+                     displayName="simpletests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>../brewpi_cpp/test/newsimpletest.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../brewpi_avr</Elem>
+    <Elem>../brewpi_cpp</Elem>
+  </sourceRootList>
+  <projectmakefile>makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../brewpi_cpp</pElem>
+            <pElem>../brewpi_avr</pElem>
+            <pElem>../brewpi_avr/fallback</pElem>
+          </incDir>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="../brewpi_avr/Actuator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Actuator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ActuatorArduinoPin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ActuatorAutoOff.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ArduinoEepromAccess.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Brewpi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/BrewpiStrings.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/BrewpiStrings.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Build/makedep.mk" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Build/makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Buzzer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Buzzer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ConfigDefault.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DS2413.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DallasTemperature.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DeviceManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DeviceManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Display.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Display.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DisplayBase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DisplayLcd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromAccess.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromFormat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FastDigitalPin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterCascaded.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterCascaded.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterFixed.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterFixed.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/JsonKeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/LogMessages.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Logger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Menu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/NullLcdDriver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/NullLcdDriver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OLEDFourBit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWire.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWireActuator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWireDevices.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWireTempSensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/PiLink.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/PiLink.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Pins.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/RotaryEncoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Sensor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Sensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SensorArduinoPin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SettingsManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SettingsManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Simulator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Simulator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SpiLcd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempControl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorBasic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorDisconnected.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorExternal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorMock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TemperatureFormats.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TemperatureFormats.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Ticks.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Ticks.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TicksArduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Version.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/brewpi_avr.cppproj" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/ArrayEepromAccess.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Print.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Print.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/test/newsimpletest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/timems.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/timems.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Actuator.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Brewpi.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/BrewpiStrings.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Buzzer.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/DeviceManager.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Display.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/DisplayLcd.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/EepromManager.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/FilterCascaded.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/FilterFixed.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Logger.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Main.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Menu.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/NullLcdDriver.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/PiLink.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Print.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/RotaryEncoder.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Sensor.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/SettingsManager.d"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Simulator.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/TempControl.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/TempSensor.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/TemperatureFormats.d"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Ticks.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/brewpi-avr.exe" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/timems.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/Brewpi.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/DisplayLcd.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/RotaryEncoder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/Main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/test/ArrayEepromAccess_Test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>../googletest/include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerLibFileItem>R:/dev/brewpi/brewpi-avr/googletest/dist/Debug/MinGW-Windows/libgoogletest.a</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="../brewpi_avr/Actuator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Actuator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ActuatorArduinoPin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ActuatorAutoOff.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ArduinoEepromAccess.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Brewpi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/BrewpiStrings.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/BrewpiStrings.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Build/makedep.mk" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Build/makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Buzzer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Buzzer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/ConfigDefault.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DS2413.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DallasTemperature.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DeviceManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DeviceManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Display.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Display.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DisplayBase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DisplayLcd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromAccess.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromFormat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/EepromTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FastDigitalPin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterCascaded.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterCascaded.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterFixed.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/FilterFixed.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/JsonKeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/LogMessages.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Logger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Menu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/NullLcdDriver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/NullLcdDriver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OLEDFourBit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWire.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWireActuator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWireDevices.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/OneWireTempSensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/PiLink.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/PiLink.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Pins.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/RotaryEncoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Sensor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Sensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SensorArduinoPin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SettingsManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SettingsManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Simulator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Simulator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SpiLcd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempControl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorBasic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorDisconnected.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorExternal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TempSensorMock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TemperatureFormats.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TemperatureFormats.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Ticks.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Ticks.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/TicksArduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Version.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/brewpi_avr.cppproj" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/ArrayEepromAccess.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Print.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/Print.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/test/newsimpletest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/timems.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/timems.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Actuator.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Brewpi.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/BrewpiStrings.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Buzzer.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/DeviceManager.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Display.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/DisplayLcd.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/EepromManager.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/FilterCascaded.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/FilterFixed.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Logger.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Main.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Menu.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/NullLcdDriver.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/PiLink.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Print.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/RotaryEncoder.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Sensor.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/SettingsManager.d"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Simulator.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/TempControl.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/TempSensor.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/TemperatureFormats.d"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/Ticks.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/brewpi-avr.exe" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/tmp/timems.d" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/Brewpi.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/DisplayLcd.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/RotaryEncoder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/Main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/test/ArrayEepromAccess_Test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+    </conf>
+  </confs>
+</configurationDescriptor>
