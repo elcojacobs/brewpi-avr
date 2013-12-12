@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="89">
+<configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="brewpi_avr" displayName="brewpi_avr" projectFiles="true">
       <logicalFolder name="Build" displayName="Build" projectFiles="true">
@@ -14,7 +14,7 @@
       <itemPath>../brewpi_avr/ActuatorArduinoPin.h</itemPath>
       <itemPath>../brewpi_avr/ActuatorAutoOff.h</itemPath>
       <itemPath>../brewpi_avr/ArduinoEepromAccess.h</itemPath>
-      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_avr/Brewpi.cpp</itemPath>
+      <itemPath>../brewpi_avr/Brewpi.cpp</itemPath>
       <itemPath>../brewpi_avr/Brewpi.h</itemPath>
       <itemPath>../brewpi_avr/BrewpiStrings.cpp</itemPath>
       <itemPath>../brewpi_avr/BrewpiStrings.h</itemPath>
@@ -28,7 +28,7 @@
       <itemPath>../brewpi_avr/Display.cpp</itemPath>
       <itemPath>../brewpi_avr/Display.h</itemPath>
       <itemPath>../brewpi_avr/DisplayBase.h</itemPath>
-      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_avr/DisplayLcd.cpp</itemPath>
+      <itemPath>../brewpi_avr/DisplayLcd.cpp</itemPath>
       <itemPath>../brewpi_avr/DisplayLcd.h</itemPath>
       <itemPath>../brewpi_avr/EepromAccess.h</itemPath>
       <itemPath>../brewpi_avr/EepromFormat.h</itemPath>
@@ -56,7 +56,7 @@
       <itemPath>../brewpi_avr/PiLink.cpp</itemPath>
       <itemPath>../brewpi_avr/PiLink.h</itemPath>
       <itemPath>../brewpi_avr/Pins.h</itemPath>
-      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_avr/RotaryEncoder.cpp</itemPath>
+      <itemPath>../brewpi_avr/RotaryEncoder.cpp</itemPath>
       <itemPath>../brewpi_avr/RotaryEncoder.h</itemPath>
       <itemPath>../brewpi_avr/Sensor.cpp</itemPath>
       <itemPath>../brewpi_avr/Sensor.h</itemPath>
@@ -114,7 +114,7 @@
       <itemPath>../brewpi_cpp/Arduino.h</itemPath>
       <itemPath>../brewpi_cpp/ArrayEepromAccess.h</itemPath>
       <itemPath>../brewpi_cpp/Config.h</itemPath>
-      <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_cpp/Main.cpp</itemPath>
+      <itemPath>../brewpi_cpp/Main.cpp</itemPath>
       <itemPath>../brewpi_cpp/Print.cpp</itemPath>
       <itemPath>../brewpi_cpp/Print.h</itemPath>
       <itemPath>../brewpi_cpp/makefile</itemPath>
@@ -128,7 +128,8 @@
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
       <logicalFolder name="f2" displayName="gtest" projectFiles="true" kind="TEST">
-        <itemPath>R:/dev/brewpi/brewpi-avr/brewpi_cpp/test/ArrayEepromAccess_Test.cpp</itemPath>
+        <itemPath>../brewpi_cpp/test/ArrayEepromAccess_Test.cpp</itemPath>
+        <itemPath>../brewpi_avr/temperatureFormatsTest.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1"
                      displayName="simpletests"
@@ -152,7 +153,6 @@
   <confs>
     <conf name="Debug" type="3">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -180,6 +180,8 @@
             ex="false"
             tool="3"
             flavor2="0">
+      </item>
+      <item path="../brewpi_avr/Brewpi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/Brewpi.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -210,6 +212,8 @@
       <item path="../brewpi_avr/Display.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/DisplayBase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DisplayLcd.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/DisplayLcd.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -264,6 +268,8 @@
       <item path="../brewpi_avr/PiLink.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/Pins.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/RotaryEncoder.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/RotaryEncoder.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -321,17 +327,29 @@
       </item>
       <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../brewpi_avr/temperatureFormatsTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="../brewpi_cpp/Arduino.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/ArrayEepromAccess.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/Config.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../brewpi_cpp/Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../brewpi_cpp/Print.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_cpp/Print.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/test/ArrayEepromAccess_Test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="../brewpi_cpp/test/newsimpletest.cpp"
             ex="false"
@@ -399,31 +417,6 @@
       <item path="../brewpi_cpp/tmp/brewpi-avr.exe" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/tmp/timems.d" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/Brewpi.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/DisplayLcd.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/RotaryEncoder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/Main.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/test/ArrayEepromAccess_Test.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
@@ -457,14 +450,13 @@
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f2</output>
           <linkerLibItems>
-            <linkerLibFileItem>R:/dev/brewpi/brewpi-avr/googletest/dist/Debug/MinGW-Windows/libgoogletest.a</linkerLibFileItem>
+            <linkerLibFileItem>../googletest/dist/Debug/MinGW-Windows/libgoogletest.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </folder>
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -498,6 +490,8 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="../brewpi_avr/Brewpi.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../brewpi_avr/Brewpi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/BrewpiStrings.cpp" ex="false" tool="1" flavor2="0">
@@ -527,6 +521,8 @@
       <item path="../brewpi_avr/Display.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/DisplayBase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/DisplayLcd.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/DisplayLcd.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -581,6 +577,8 @@
       <item path="../brewpi_avr/PiLink.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/Pins.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/RotaryEncoder.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/RotaryEncoder.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -638,17 +636,29 @@
       </item>
       <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../brewpi_avr/temperatureFormatsTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="../brewpi_cpp/Arduino.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/ArrayEepromAccess.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/Config.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../brewpi_cpp/Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../brewpi_cpp/Print.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_cpp/Print.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_cpp/test/ArrayEepromAccess_Test.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="../brewpi_cpp/test/newsimpletest.cpp"
             ex="false"
@@ -716,31 +726,6 @@
       <item path="../brewpi_cpp/tmp/brewpi-avr.exe" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_cpp/tmp/timems.d" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/Brewpi.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/DisplayLcd.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_avr/RotaryEncoder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/Main.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="R:/dev/brewpi/brewpi-avr/brewpi_cpp/test/ArrayEepromAccess_Test.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
