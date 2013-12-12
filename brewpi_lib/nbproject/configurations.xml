@@ -61,6 +61,8 @@
       <itemPath>../brewpi_avr/Sensor.cpp</itemPath>
       <itemPath>../brewpi_avr/Sensor.h</itemPath>
       <itemPath>../brewpi_avr/SensorArduinoPin.h</itemPath>
+      <itemPath>../brewpi_avr/SensorHistory.cpp</itemPath>
+      <itemPath>../brewpi_avr/SensorHistory.h</itemPath>
       <itemPath>../brewpi_avr/SettingsManager.cpp</itemPath>
       <itemPath>../brewpi_avr/SettingsManager.h</itemPath>
       <itemPath>../brewpi_avr/Simulator.cpp</itemPath>
@@ -129,6 +131,7 @@
                    kind="TEST_LOGICAL_FOLDER">
       <logicalFolder name="f2" displayName="gtest" projectFiles="true" kind="TEST">
         <itemPath>../brewpi_cpp/test/ArrayEepromAccess_Test.cpp</itemPath>
+        <itemPath>../brewpi_avr/test/SensorHistoryTest.cpp</itemPath>
         <itemPath>../brewpi_avr/test/TemperatureFormatsTest.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1"
@@ -279,6 +282,10 @@
       </item>
       <item path="../brewpi_avr/SensorArduinoPin.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../brewpi_avr/SensorHistory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SensorHistory.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../brewpi_avr/SettingsManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/SettingsManager.h" ex="false" tool="3" flavor2="0">
@@ -326,6 +333,11 @@
       <item path="../brewpi_avr/brewpi_avr.cppproj" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/test/SensorHistoryTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="../brewpi_avr/test/TemperatureFormatsTest.cpp"
             ex="false"
@@ -588,6 +600,10 @@
       </item>
       <item path="../brewpi_avr/SensorArduinoPin.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../brewpi_avr/SensorHistory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/SensorHistory.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../brewpi_avr/SettingsManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../brewpi_avr/SettingsManager.h" ex="false" tool="3" flavor2="0">
@@ -635,6 +651,11 @@
       <item path="../brewpi_avr/brewpi_avr.cppproj" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../brewpi_avr/test/SensorHistoryTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="../brewpi_avr/test/TemperatureFormatsTest.cpp"
             ex="false"

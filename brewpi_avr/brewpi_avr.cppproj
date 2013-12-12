@@ -356,6 +356,12 @@
     <Compile Include="SensorArduinoPin.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="SensorHistory.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SensorHistory.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="SettingsManager.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -411,9 +417,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TicksArduino.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="sensorHistory.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Version.h">
