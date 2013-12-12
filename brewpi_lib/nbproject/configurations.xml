@@ -129,7 +129,7 @@
                    kind="TEST_LOGICAL_FOLDER">
       <logicalFolder name="f2" displayName="gtest" projectFiles="true" kind="TEST">
         <itemPath>../brewpi_cpp/test/ArrayEepromAccess_Test.cpp</itemPath>
-        <itemPath>../brewpi_avr/temperatureFormatsTest.cpp</itemPath>
+        <itemPath>../brewpi_avr/test/TemperatureFormatsTest.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1"
                      displayName="simpletests"
@@ -327,7 +327,7 @@
       </item>
       <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../brewpi_avr/temperatureFormatsTest.cpp"
+      <item path="../brewpi_avr/test/TemperatureFormatsTest.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -636,7 +636,7 @@
       </item>
       <item path="../brewpi_avr/fallback/Config.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../brewpi_avr/temperatureFormatsTest.cpp"
+      <item path="../brewpi_avr/test/TemperatureFormatsTest.cpp"
             ex="false"
             tool="1"
             flavor2="0">
