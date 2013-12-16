@@ -20,8 +20,6 @@
 
 #pragma once
 
-#define SENSOR_HISTORY_LENGTH 4
-
 #include "TemperatureFormats.h"
 #include "Ticks.h"
 
@@ -34,8 +32,9 @@
 /**
 * \brief This bit mask defines which bits of the input value are significant enough to log a time stamp.
 * 
-* Default is the 12 bits from the DS18B20 sensor
+* Default is the 12 bits from the DS18B20 sensor, so 4 ignored bits
 */
+#define SENSOR_HISTORY_LENGTH 4
 #define SENSOR_HISTORY_IGNORED_BITS 4
 #define SENSOR_HISTORY_MIN_DIFF (1<<SENSOR_HISTORY_IGNORED_BITS)
 
@@ -48,17 +47,13 @@
 
 class SensorHistory
 {
-public:
-	/**
-	* \brief Constructor, initializes time stamps to 0-SENSOR_HISTORY_MAX_SECONDS, so they won't be used until overwritten.
-	*
-	* Also initializes lastValue to INVALID_TEMP, which will trigger the first diff to be registered as zero.
-	*/
+public:	
 	SensorHistory();
 	~SensorHistory(){};
         void add(temperature newTemp, ticks_seconds_t currentTime);
         temperature getSlope(temperature currentTemp, ticks_seconds_t currentTime);
         temperature getSum();
+        temperature getLastValue();
 //protected:
 	
 //private:

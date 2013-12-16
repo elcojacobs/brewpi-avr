@@ -22,6 +22,11 @@
 #include "TemperatureFormats.h"
 #include "Ticks.h"
 
+/**
+ * \brief Constructor, initializes time stamps to 0-SENSOR_HISTORY_MAX_SECONDS, so they won't be used until overwritten.
+ *
+ * Also initializes lastValue to INVALID_TEMP, which will trigger the first diff to be registered as zero.
+ */
 
 SensorHistory::SensorHistory(){		
         for(uint8_t i=0; i < SENSOR_HISTORY_LENGTH; i++){
@@ -32,26 +37,27 @@ SensorHistory::SensorHistory(){
 };
 
 /**
-* \brief Checks whether the temperature to be added is different from previous temperature and adds it to the transition list
-*
-* This function will take a temperature and will compare it to the previous temperature that was added, masked with the precision bits.
-* The default precision is the native DS18B20 sensor resolution. When the value is different, it stores a timestamp in seconds and 
-* the difference with the previous value. Previous history is shifted back, discarding the oldest.
-*
-* @param newTemp A new temperature value to update the change history.
-*/
+ * \brief Checks whether the temperature to be added is different from previous temperature and adds it to the transition list
+ *
+ * This function will take a temperature and will compare it to the previous temperature that was added, masked with the precision bits.
+ * The default precision is the native DS18B20 sensor resolution. When the value is different, it stores a timestamp in seconds and 
+ * the difference with the previous value. Previous history is shifted back, discarding the oldest.
+ *
+ * @param newTemp A new temperature value to update the change history.
+ */
+
 void SensorHistory::add(temperature newTemp, ticks_seconds_t currentTime){
 	if(newTemp == INVALID_TEMP){
 		return;
 	}	
-	// mask lower bits
-	temperature shiftedTemp = newTemp >> SENSOR_HISTORY_IGNORED_BITS;
+	// mask lower bits after rounding
+	temperature shiftedTemp = (newTemp + (1<<SENSOR_HISTORY_IGNORED_BITS-1)) >> SENSOR_HISTORY_IGNORED_BITS;
 	// if unmasked bits are different, log a time stamp and store the difference
 	if(shiftedTemp != lastValue){
 		// shift old data back one position, oldest is discarded
-		for(uint8_t i=0; i < SENSOR_HISTORY_LENGTH-1; i++){
-			times[i+1] = times[i];
-			diffs[i+1] = diffs[i];
+		for(uint8_t i=SENSOR_HISTORY_LENGTH-1; i > 0; i--){
+			times[i] = times[i-1];
+			diffs[i] = diffs[i-1];
 		}
 		if(lastValue == INVALID_TEMP){
 			diffs[0] = 0;
@@ -69,38 +75,52 @@ void SensorHistory::add(temperature newTemp, ticks_seconds_t currentTime){
 	}
 }
 
-  /**
-  * \brief Calculates the slope from sensor history
-  *
-  * This function will calculate the slope of the signal based on the stored timestamped differences.
-  * The full list is used if the oldest sample is newer than SENSOR_HISTORY_MAX_SECONDS. Otherwise, only
-  * the samples newer than SENSOR_HISTORY_MAX_SECONDS are used.
-  *
-  * @return the slope of the temperature sensor, in dT/h
-  */
+/**
+ * \brief Calculates the slope from sensor history
+ *
+ * This function will calculate the slope of the signal based on the stored timestamped differences.
+ * 
+ * The full list is used if the oldest sample is newer than SENSOR_HISTORY_MAX_SECONDS. Otherwise, only
+ * the samples newer than SENSOR_HISTORY_MAX_SECONDS are used.
+ * 
+ * @param currentTemp The current temperature in the internal temperature format
+ * @param currentTime The current time in seconds
+ * @return the slope of the temperature sensor, in dT/h
+ */
 
 temperature SensorHistory::getSlope(temperature currentTemp, ticks_seconds_t currentTime){
-	ticks_seconds_t timeStamp = currentTime;
-	int16_t totalDiff = 0;
-	uint32_t totalTime = 0;
-	
-	timeStamp = currentTime - times[0];
-	
-	for(uint8_t i=0;i < SENSOR_HISTORY_LENGTH-1; i++){
-		ticks_seconds_t timeDiff = timeStamp - times[i];
-		totalTime += timeDiff;
-		if(totalTime > SENSOR_HISTORY_MAX_SECONDS){
-			// stop adding points and add SENSOR_HISTORY_MAX_SECONDS to total time, because there has been no change for that time.
-			totalTime = SENSOR_HISTORY_MAX_SECONDS;
-			break;
+	int16_t totalTempDiff = 0;
+	ticks_seconds_t totalTimeDiff=1;
+        ticks_seconds_t time = currentTime;
+	for(uint8_t i=0;i < SENSOR_HISTORY_LENGTH; i++){                
+		if(totalTimeDiff < SENSOR_HISTORY_MAX_SECONDS){
+			totalTempDiff += diffs[i];
+                        totalTimeDiff = currentTime - times[i];                
 		}
-		else{
-			totalDiff += diffs[i];
-			timeStamp = times[i];
-		}
+                else{
+                    totalTimeDiff = SENSOR_HISTORY_MAX_SECONDS;
+                    break;
+                }                
 	}
-        return totalDiff / totalTime;
+        ticks_seconds_t newestPeriod = currentTime-times[0];
+        ticks_seconds_t oldestPeriod = times[SENSOR_HISTORY_LENGTH-2] - times[SENSOR_HISTORY_LENGTH-1];        
+        if(newestPeriod < oldestPeriod){
+            // Time between two oldest values is larger than time since newest point
+            // Add difference to total time to smooth out the transition
+            // This basically uses the expected period for the newest value if the slope is constant.
+            totalTimeDiff += oldestPeriod - newestPeriod;
+        }
+        // return slope per hour
+        return (totalTempDiff * (3600<<SENSOR_HISTORY_IGNORED_BITS)) / totalTimeDiff;
 }
+
+/**
+ * \brief Returns the sum of the stored temperature differences. Mainly used for testing.
+ *
+ * This function sums the stored differences and shifts it back to normal precision before returning the value.
+ *
+ * @return sum of temperature differences stored in history.
+ */
 
 temperature SensorHistory::getSum(){
     int32_t totalDiff = 0;
@@ -109,4 +129,14 @@ temperature SensorHistory::getSum(){
     }        
     // Scale result back to normal precision before returning it
     return totalDiff<<SENSOR_HISTORY_IGNORED_BITS;
+}
+
+/**
+ * \brief Returns the last value stored in the history
+ *
+ * @return last stored temperature.
+ */
+
+temperature SensorHistory::getLastValue(){
+    return (lastValue == INVALID_TEMP) ? INVALID_TEMP : lastValue<<SENSOR_HISTORY_IGNORED_BITS;
 }
