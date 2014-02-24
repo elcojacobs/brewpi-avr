@@ -23,23 +23,29 @@
 #include "Ticks.h"
 
 void TempSensor::init()
-{		
-	temperature temperature = _sensor->init();
-	if (temperature!=TEMP_SENSOR_DISCONNECTED) {
-		fastFilter.init(temperature);
-		slowFilter.init(temperature);
-		slopeFilter.init(0);
-		prevOutputForSlope = slowFilter.readOutputDoublePrecision();		
+{				
+	logDebug("tempsensor::init - begin %d", failedReadCount);
+	if (_sensor && _sensor->init() && (failedReadCount<0 || failedReadCount>60)) {		
+		temperature temp = _sensor->read();
+		if (temp!=TEMP_SENSOR_DISCONNECTED) {
+			logDebug("initializing filters with value %d", temp);
+			fastFilter.init(temp);
+			slowFilter.init(temp);
+			slopeFilter.init(0);
+			prevOutputForSlope = slowFilter.readOutputDoublePrecision();
+			failedReadCount = 0;
+		}		
 	}
 }
 
 void TempSensor::update()
 {	
-	if (!_sensor) return;
-	
-	temperature temp = _sensor->read();
-	if (temp==TEMP_SENSOR_DISCONNECTED)
+	temperature temp;
+	if (!_sensor || (temp=_sensor->read())==TEMP_SENSOR_DISCONNECTED) {		
+		failedReadCount++;		
+		failedReadCount = min(failedReadCount,int8_t(127));	// limit
 		return;
+	}
 		
 	fastFilter.add(temp);
 	slowFilter.add(temp);

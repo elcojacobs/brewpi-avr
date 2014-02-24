@@ -166,9 +166,10 @@ void PiLink::receive(void){
 			// s shield type
 			// y: simulator			
 			// b: board
-			print_P(PSTR("N:{\"v\":\"%S\",\"n\":%d,\"s\":%d,\"y\":%d,\"b\":\"%c\",\"l\":\"%d\"}"), 
+			print_P(PSTR("N:{\"v\":\"%S\",\"n\":%d,\"c\":\"%S\",\"s\":%d,\"y\":%d,\"b\":\"%c\",\"l\":\"%d\"}"), 
 					PSTR(VERSION_STRING), 
 					BUILD_NUMBER,
+					PSTR(BUILD_NAME),
 					BREWPI_STATIC_CONFIG, 
 					BREWPI_SIMULATE, 
 					BREWPI_BOARD,
@@ -715,8 +716,13 @@ static uint8_t* const filterSettings[] = {
 
 void applyFilterSetting(const char* val, void* target) {
 	// the cast was  (uint8_t(uint16_t(target), changed to unsigned int so that the
-        // first cast is the same width as a pointer, avoiding a warning    
-        uint8_t offset = uint8_t((unsigned int)(target));		// target is really just an integer
+	// first cast is the same width as a pointer, avoiding a warning
+	// On x64 builds, unsigned int is still 32 bits, so cast to uint64_t instead
+	#if defined(_M_X64) || defined(__amd64__)
+		uint8_t offset = uint8_t((uint64_t) target);		// target is really just an integer
+        #else
+        	uint8_t offset = uint8_t((unsigned int) target);		// target is really just an integer
+        #endif
         
 	FilterType filterType = FilterType(offset&3);
 	TempSensorTarget sensorTarget = TempSensorTarget(offset/3);

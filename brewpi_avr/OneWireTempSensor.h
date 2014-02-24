@@ -24,9 +24,12 @@
 #include "TempSensor.h"
 #include "FastDigitalPin.h"
 #include "DallasTemperature.h"
+#include "Ticks.h"
 
 class DallasTemperature;
 class OneWire;
+
+#define ONEWIRE_TEMP_SENSOR_PRECISION (4)
 
 class OneWireTempSensor : public BasicTempSensor {
 public:	
@@ -38,8 +41,7 @@ public:
 	 * /param calibration	A temperature value that is added to all readings. This can be used to calibrate the sensor.	 
 	 */
 	OneWireTempSensor(OneWire* bus, DeviceAddress address, fixed4_4 calibrationOffset)
-	: oneWire(bus), sensor(NULL) {
-		lastRequestTime = 0;
+	: oneWire(bus), sensor(NULL) {		
 		connected = true;  // assume connected. Transition from connected to disconnected prints a message.
 		memcpy(sensorAddress, address, sizeof(DeviceAddress));
 		this->calibrationOffset = calibrationOffset;
@@ -51,15 +53,24 @@ public:
 		return connected;
 	}		
 	
-	temperature init();
+	bool init();
 	temperature read();
 	
 	private:
 
 	void setConnected(bool connected);
-	void waitForConversion();
+	bool requestConversion();
+	void waitForConversion()
+	{
+		wait.millis(750);
+	}
+
 	
-	uint16_t lastRequestTime; // in seconds
+	/**
+	 * Reads the temperature. If successful, constrains the temp to the range of the temperature type and
+	 * updates lastRequestTime. On successful, leaves lastRequestTime alone and returns DEVICE_DISCONNECTED.
+	 */
+	temperature readAndConstrainTemp();
 	
 	OneWire * oneWire;
 	DallasTemperature * sensor;

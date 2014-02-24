@@ -29,6 +29,8 @@
 #include "PiLink.h"
 #include "EepromFormat.h"
 
+#define CALIBRATION_OFFSET_PRECISION (4)
+
 #ifdef ARDUINO
 #include "OneWireTempSensor.h"
 #include "OneWireActuator.h"
@@ -112,10 +114,10 @@ void* DeviceManager::createDevice(DeviceConfig& config, DeviceType dt)
 			#endif				
 			else
 #if BREWPI_SIMULATE
-                            return new ValueActuator();
-#else
+				return new ValueActuator();
+#else                            
                             
-			// use hardware actuators even for simulator
+				// use hardware actuators even for simulator
 				return new DigitalPinActuator(config.hw.pinNr, config.hw.invert);
 #endif		
 		case DEVICE_HARDWARE_ONEWIRE_TEMP:
@@ -128,6 +130,9 @@ void* DeviceManager::createDevice(DeviceConfig& config, DeviceType dt)
 #if BREWPI_DS2413
 		case DEVICE_HARDWARE_ONEWIRE_2413:
 		#if BREWPI_SIMULATE
+		if (dt==DEVICETYPE_SWITCH_SENSOR)
+			return new ValueSensor<bool>(false);
+		else
 			return new ValueActuator();
 		#else
 			return new OneWireActuator(oneWireBus(config.hw.pinNr), config.hw.address, config.hw.pio, config.hw.invert);
@@ -341,7 +346,7 @@ void handleDeviceDefinition(const char* key, const char* val, void* pv)
 	if (key[0]==DEVICE_ATTRIB_ADDRESS)
 		parseBytes(def->address, val, 8);
 	else if (key[0]==DEVICE_ATTRIB_CALIBRATEADJUST) {
-		def->calibrationAdjust = fixed4_4(stringToTempDiff(val)>>5);
+		def->calibrationAdjust = fixed4_4(stringToTempDiff(val)>>(TEMP_FIXED_POINT_BITS-CALIBRATION_OFFSET_PRECISION));
 	}		
 	else if (idx>=0) 
 		((uint8_t*)def)[idx] = (uint8_t)atol(val);
@@ -567,7 +572,7 @@ void DeviceManager::printDevice(device_slot_t slot, DeviceConfig& config, const 
 	}
 #endif	
 	if (config.deviceHardware==DEVICE_HARDWARE_ONEWIRE_TEMP) {
-		tempDiffToString(buf, temperature(config.hw.calibration)<<5, 3, 8);
+		tempDiffToString(buf, temperature(config.hw.calibration)<<(TEMP_FIXED_POINT_BITS-CALIBRATION_OFFSET_PRECISION), 3, 8);
 		p.print(",\"j\":");
 		p.print(buf);
 	}
@@ -683,8 +688,10 @@ inline void DeviceManager::readTempSensorValue(DeviceConfig::Hardware hw, char* 
 #if !BREWPI_SIMULATE
 	OneWire* bus = oneWireBus(hw.pinNr);
 	OneWireTempSensor sensor(bus, hw.address, 0);		// NB: this value is uncalibrated, since we don't have the calibration offset until the device is configured
-	temperature value = sensor.init();	
-	tempToString(out, value, 3, 9);
+	temperature temp = INVALID_TEMP;
+	if (sensor.init())
+		temp = sensor.read();
+	tempToString(out, temp, 3, 9);
 #else
 	strcpy_P(out, PSTR("0.00"));
 #endif	
@@ -694,11 +701,11 @@ void DeviceManager::handleEnumeratedDevice(DeviceConfig& config, EnumerateHardwa
 {
 	if (h.function && !isAssignable(deviceType(DeviceFunction(h.function)), config.deviceHardware)) 
 		return; // device not applicable for required function
-	
+		
 //	logDebug("Handling device");
 	out.slot = findHardwareDevice(config);
 	DEBUG_ONLY(logInfoInt(INFO_MATCHING_DEVICE, out.slot));
-	
+		
 	if (isDefinedSlot(out.slot)) {
 		if (h.unused)	// only list unused devices, and this one is already used
 			return;
@@ -787,9 +794,21 @@ void DeviceManager::enumerateOneWireDevices(EnumerateHardware& h, EnumDevicesCal
 							handleEnumeratedDevice(config, h, callback, output);
 						}
 						break;
-		#endif				
-					default:
+		#endif
+					case DEVICE_HARDWARE_ONEWIRE_TEMP:
+		#if !ONEWIRE_PARASITE_SUPPORT
+						{	// check that device is not parasite powered
+							DallasTemperature sensor(wire);
+							if(sensor.initConnection(config.hw.address)){
+								handleEnumeratedDevice(config, h, callback, output);
+							}
+						}
+		#else
 						handleEnumeratedDevice(config, h, callback, output);
+		#endif
+						break;
+					default:
+						handleEnumeratedDevice(config, h, callback, output);	
 				}
 			}
 		}
@@ -857,7 +876,7 @@ void UpdateDeviceState(DeviceDisplay& dd, DeviceConfig& dc, char* val)
 		else if (dt==DEVICETYPE_TEMP_SENSOR) {
 			BasicTempSensor& s = unwrapSensor(dc.deviceFunction, *ppv);
 			temperature temp = s.read();
-			fixedPointToString(val, temp, 3, 9);
+			tempToString(val, temp, 3, 9);
 		}
 		else if (dt==DEVICETYPE_SWITCH_ACTUATOR) {
 			sprintf_P(val, STR_FMT_U, (unsigned int) ((Actuator*)*ppv)->isActive()!=0);			

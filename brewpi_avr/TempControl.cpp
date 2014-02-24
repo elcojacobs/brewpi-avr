@@ -81,14 +81,18 @@ void TempControl::init(void){
 	cs.mode = MODE_OFF;
 	
 	cameraLight.setActive(false);
+	
+	// this is for cases where the device manager hasn't configured beer/fridge sensor.	
+	if (beerSensor==NULL) {
+		beerSensor = new TempSensor(TEMP_SENSOR_TYPE_BEER, &defaultTempSensor);
+		beerSensor->init();
+	}
 		
-	if (tempControl.beerSensor==NULL)
-		tempControl.beerSensor = new TempSensor(TEMP_SENSOR_TYPE_BEER, &defaultTempSensor);
-	if (tempControl.fridgeSensor==NULL)
-		tempControl.fridgeSensor = new TempSensor(TEMP_SENSOR_TYPE_FRIDGE, &defaultTempSensor);
-		
-	beerSensor->init();
-	fridgeSensor->init();
+	if (fridgeSensor==NULL) {
+		fridgeSensor = new TempSensor(TEMP_SENSOR_TYPE_FRIDGE, &defaultTempSensor);
+		fridgeSensor->init();
+	}
+	
 	updateTemperatures();
 	reset();
 	
@@ -104,15 +108,17 @@ void TempControl::reset(void){
 	doNegPeakDetect=false;
 }
 
+void updateSensor(TempSensor* sensor) {
+	sensor->update();
+	if(!sensor->isConnected()) {
+		sensor->init();
+	}		
+}
+
 void TempControl::updateTemperatures(void){
-	beerSensor->update();
-	if(!beerSensor->isConnected() && tempControl.modeIsBeer()){
-		beerSensor->init(); // try to restart the sensor when controlling beer temperature
-	}
-	fridgeSensor->update();
-	if(!fridgeSensor->isConnected()){
-		fridgeSensor->init(); // always try to restart the fridge sensor
-	}
+	
+	updateSensor(beerSensor);
+	updateSensor(fridgeSensor);
 	
 	// Read ambient sensor to keep the value up to date. If no sensor is connected, this does nothing.
 	// This prevents a delay in serial response because the value is not up to date.
@@ -391,7 +397,7 @@ void TempControl::detectPeaks(void){
 			}
 			detected = INFO_POSITIVE_PEAK;
 		}
-		if(timeSinceHeating() > HEAT_PEAK_DETECT_TIME){
+		else if(timeSinceHeating() > HEAT_PEAK_DETECT_TIME){
 			if(fridgeSensor->readFastFiltered() < (cv.posPeakEstimate+cc.heatingTargetLower)){
 				// Idle period almost reaches maximum allowed time for peak detection
 				// This is the heat, then drift up too slow (but in the right direction).
@@ -463,6 +469,9 @@ void TempControl::detectPeaks(void){
 void TempControl::increaseEstimator(temperature * estimator, temperature error){
 	temperature factor = 614 + constrainTemp(abs(error)>>5, 0, 154); // 1.2 + 3.1% of error, limit between 1.2 and 1.5
 	*estimator = multiplyFactorTemperatureDiff(factor, *estimator);
+	if(*estimator < 25){
+		*estimator = intToTempDiff(5)/100; // make estimator at least 0.05
+	}
 	eepromManager.storeTempSettings();
 }
 
@@ -544,8 +553,7 @@ void TempControl::setMode(char newMode, bool force){
 	}
 	if (force) {
 		cs.mode = newMode;
-		if(newMode==MODE_BEER_PROFILE || newMode == MODE_OFF){
-			// set temperatures to undefined until temperatures have been received from RPi
+		if(newMode == MODE_OFF){
 			cs.beerSetting = INVALID_TEMP;
 			cs.fridgeSetting = INVALID_TEMP;
 		}
